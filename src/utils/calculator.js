@@ -15,9 +15,6 @@ const LIMITS = [
 
 export function calculateISR(totalRevenue) {
   for (const [lowerLimit, upperLimit, fixedFee, percentageOverExcess] of LIMITS) {
-    console.log('------------------')
-    console.log(lowerLimit, upperLimit, fixedFee, percentageOverExcess)
-    console.log('totalRevenue', totalRevenue)
     if (totalRevenue >= lowerLimit && totalRevenue <= upperLimit) {
       const difference = totalRevenue - lowerLimit;
       const rate = (difference * percentageOverExcess) / 100;
